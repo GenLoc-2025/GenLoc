@@ -1,6 +1,14 @@
 # GenLoc
 It is a novel bug localization approach that combines semantic retrieval with the step-by-step reasoning capabilities of Large Language Models (LLMs) to identify buggy files for a given bug report. It operates in two primary steps to localize relevant files. First, it retrieves a set of semantically similar files using embedding-based similarity. Next, an LLM, supported by a set of external functions, iteratively analyzes the bug report and source files.
 
+## 🗂️ Directory Structure
+
+* `source_code/`: This folder contains the source code of GenLoc.
+* `output_files/`: Ranked list produced by GenLoc (for each trial).
+* `localized_bugs/`: Contains bugs localized by each bug localization approach.
+
+---
+
 ## ⚙️ Set-Up
 
 1. Install dependencies:
@@ -15,7 +23,13 @@ pip install -r requirements.txt
 
 ## 🔧 How to Run
 
-To execute GenLoc, follow the instructions below:
+To run GenLoc, first navigate to the source code directory:
+
+```bash
+cd source_code
+```
+
+Then, execute the following steps:
 
 ```bash
 # Step 1: Execute embedding-based retrieval
