@@ -139,10 +139,9 @@ def prepare_final_ranked_list(project, csv_path):
 
 
 if __name__ == "__main__":
-    root_dir = ''#'llm-baseline/'
     project = sys.argv[1]
     start_time = datetime.now()
-    input_filename = root_dir+project+'-ranking-using-function-call.csv'
+    input_filename = project+'_intermediate_ranking.csv'
     prepare_final_ranked_list(project, input_filename)
     end_time = datetime.now()
 

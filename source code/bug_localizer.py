@@ -1,4 +1,5 @@
 import csv
+import sys
 from datetime import datetime
 from bug_data_retriever import get_bug_data
 from bug_report_processor import BugReportProcessor
@@ -31,9 +32,9 @@ def process_bugs_parallelly(bugs, project, output_file):
 if __name__ == "__main__":
     start_time = datetime.now()
 
-    project = 'jdt'
-    input_xml_file = '../dataset/'+project+'.xml'
-    output_file = project + '-ranking-using-function-call.csv'
+    project = sys.argv[1]
+    input_xml_file = sys.argv[2]
+    output_file = project + '_intermediate_ranking.csv'
 
     bugs = get_bug_data(input_xml_file)
     process_bugs_parallelly(bugs, project, output_file)

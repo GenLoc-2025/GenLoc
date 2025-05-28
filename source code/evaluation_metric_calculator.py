@@ -108,9 +108,8 @@ def calculate_mean_average_precision_at_k(project, csv_path):
         print("MAP@", top, mean_average_precision)
 
 if __name__ == "__main__":
-    root_dir = ''#'llm-baseline/'
     project = sys.argv[1]
-    input_filename = root_dir+project+'_final_ranked_output.csv'
+    input_filename = project+'_final_ranked_output.csv'
     calculate_accuracy_at_k(project, input_filename)
     calculate_mean_reciprocal_rank_at_k(project, input_filename)
     calculate_mean_average_precision_at_k(project, input_filename) 

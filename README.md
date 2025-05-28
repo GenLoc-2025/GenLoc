@@ -6,7 +6,7 @@ It is a novel bug localization approach that combines semantic retrieval with th
 * `source_code/`: This folder contains the source code of GenLoc.
 * `output_files/`: Ranked list produced by GenLoc (for each trial).
 * `localized_bugs/`: Contains bugs localized by each bug localization approach.
-
+* `dataset/`: Contains XML files and GitHub URLs of the projects used for bug localization.
 ---
 
 ## ⚙️ Set-Up
@@ -33,23 +33,24 @@ Then, execute the following steps:
 
 ```bash
 # Step 1: Execute embedding-based retrieval
+# Format: python main.py <project_name> <project_repo_path> <bug_report_xml> <embedding_model>
+# Example:
 python main.py aspectj dataset/aspectj dataset/aspectj.xml openai
 
 # Step 2: Run the LLM-based analysis
-python bug_localizer.py
+# Format: python bug_localizer.py <project_name> <bug_report_xml>
+# Example:
+python bug_localizer.py aspectj dataset/aspectj.xml
 
 # Step 3: Perform post-processing
+# Format: python post_processor.py <project_name>
+# Example:
 python post_processor.py aspectj
 
 # Step 4: Evaluate performance using standard metrics
-python evaluation_metric_calculator.py
+# Format: python evaluation_metric_calculator.py <project_name>
+# Example:
+python evaluation_metric_calculator.py aspectj
 ```
-
----
-
-## 📂 Dataset Format
-
-* `dataset/aspectj`: Directory containing the source code files for the AspectJ project.
-* `dataset/aspectj.xml`: XML file containing structured bug report data.
 
 ---
