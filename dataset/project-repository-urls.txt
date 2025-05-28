@@ -1,0 +1,6 @@
+https://github.com/eclipse-aspectj/aspectj
+https://github.com/eclipse-birt/birt
+https://github.com/eclipse-platform/eclipse.platform.ui
+https://github.com/eclipse-jdt/eclipse.jdt.ui
+https://github.com/eclipse-platform/eclipse.platform.swt
+https://github.com/apache/tomcat
